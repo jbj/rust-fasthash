@@ -122,8 +122,8 @@ fn build_fasthash() {
     build
         .cpp(true)
         .flag("-std=c++11")
-        .flag("-Wno-implicit-fallthrough")
-        .flag("-Wno-unknown-attributes")
+        .flag_if_supported("-Wno-implicit-fallthrough")
+        .flag_if_supported("-Wno-unknown-attributes")
         .include("src/highwayhash")
         .file("src/fasthash.cpp")
         .file("src/smhasher/City.cpp")
